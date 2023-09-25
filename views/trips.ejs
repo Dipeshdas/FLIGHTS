@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Cards</title>
+    <style>
+        body, h1, p {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        /* Navbar */
+
+        .navbar {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 0;
+}
+
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar li {
+    margin: 0 20px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+        /* Navbar */
+
+
+        /* Center the card container */
+        .card-container {
+            display: flex;
+            flex-direction: column; /* Arrange cards vertically */
+            align-items: center; /* Center cards horizontally */
+            min-height: 100vh;
+        }
+
+        /* Style the card */
+        .card {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(to bottom, #62e4cc, #ffffff); /* Blue to white gradient */
+            width: 600px; /* Adjusted width */
+            text-align: center;
+            color: #ffffff; /* Text color is white */
+        }
+
+        /* Style the card title */
+        .card-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px; /* Add spacing between cards */
+        }
+
+        /* Style the card information */
+        .card-info {
+            display: inline-block; /* Display as blocks for spacing */
+            margin-right: 10px; /* Add spacing between paragraphs */
+            font-size: large;
+            margin-bottom: 10px; /* Add spacing between info sections */
+        }
+
+        /* Style the price */
+        .card-price {
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        /* Add hover effect on card */
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card-logo {
+            width: 50px; /* Adjust the logo width as needed */
+            height: 50px;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+
+        /* Style the information label */
+        .info-label {
+            font-size: large;
+            color: #333333; /* Label color */
+        }
+
+        /* Style the information output */
+        .info-output {
+            font-size: large;
+            font-weight: bold;
+            color: #555555; /* Output color */
+        }
+
+        /* Add spacing between information sections */
+        .info-section {
+            margin-bottom: 20px;
+        }
+
+        #button{
+            height: 30px;
+            border-radius: 5px;
+            background-color: rgb(252, 171, 100);
+            color: #333333;
+        }
+
+        #button:hover{
+            cursor: pointer;
+            background-color: black;
+            color: rgb(252, 171, 100);;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Flights</a></li>
+            <li><a href="#">Hotels</a></li>
+            <li><a href="#">Cars</a></li>
+            <li><a href="#">Deals</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+    <div class="card-container">
+        
+        <% trips.forEach(function(trip) { %>
+            <div class="card">
+                <h2 class="card-title">
+                    <%= trip.planename %>
+                </h2>
+                <div class="info-section">
+                    <div class="card-info">
+                        <!-- <div class="info-label">Source:</div> -->
+                        <div class="info-output"><%= trip.source %></div>
+                        <div class="info-output"><%= trip.starttime %></div>
+                    </div>
+                    <img src="https://cdn-icons-png.flaticon.com/512/3125/3125713.png" alt="Logo" class="card-logo">
+                    <div class="card-info">
+                        <!-- <div class="info-label">Destination:</div> -->
+                        <div class="info-output"><%= trip.destination %></div>
+                        <div class="info-output"><%= trip.endtime %></div>
+                    </div>
+                </div>
+                <div class="info-section">
+                    <div class="card-info">
+                        <div class="info-label">Departure Date</div>
+                        <div class="info-output"><%= trip.departureDate %></div>
+                    </div>
+                    <div class="card-info">
+                        <div class="info-label">Flight Class</div>
+                        <div class="info-output"><%= trip.flightClass %></div>
+                    </div>
+                </div>
+                
+                <p class="card-price">Price: &#8377;<%= trip.price %></p>
+                <br>
+                <input id="button" type="submit" value="Book Now">
+            </div>
+        <% }); %>
+    </div>
+</body>
+</html>

@@ -1,0 +1,194 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+
+/* Additional styles for the navigation bar */
+
+.navbar {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 0;
+}
+
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar li {
+    margin: 0 20px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+
+
+/* Styling for the selection box */
+.selection-box {
+    display: flex;
+    justify-content: space-around;
+    background-color: #007BFF;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    max-width: 800px;
+    margin: 10px auto;
+}
+
+.selection-item {
+    text-align: center;
+}
+
+.selection-item img {
+    max-width: 50px;
+    margin-bottom: 10px;
+}
+
+.selection-item h3 {
+    font-size: 18px;
+}
+
+.selection-item:hover {
+    background-color: #0056b3;
+    cursor: pointer;
+}
+
+
+
+
+.search-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+/* Styling for the search box */
+.search-box {
+    max-width: 800px;
+    margin: 10px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    display: inline-block;
+    position: relative;
+    margin-right: 20px;
+    font-size: large;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+select,
+input[type="date"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Styling for search results */
+#search-results {
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+
+button[type="submit"] {
+    margin-top: 10px;
+    width: 100%;
+    max-width: 300px; /* Adjust as needed */
+    margin-left: 230px;
+}
+
+
+
+.radio-buttons {
+    display: flex;
+    align-items: center;
+}
+
+.radio-group {
+    display: flex;
+    margin-right: 20px;
+}
+
+.radio-group label {
+    margin-right: 5px;
+}
+
+.radio-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 15px;
+}
+
+.radio-group {
+    display: flex;
+    align-items: center;
+}
+
+.radio-group label {
+    margin-right: 10px;
+}
+
+.radio-group input[type="radio"] {
+    margin-right: 5px;
+}
+
+#fare{
+    margin-top: 10px;
+}
+
+
+
+/* Style for selected radio button */
+.radio-group input[type="radio"]:checked +label {
+    background-color: #9ac8f9; /* Change to your desired background color */
+    color: white; /* Change to your desired text color */
+    /* border: 1px solid black; */
+    border-radius: 3px;
+}
+
+
+

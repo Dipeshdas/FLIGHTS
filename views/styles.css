@@ -1,0 +1,49 @@
+/* Reset some default styles */
+body, h1, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Style the card container */
+.card-container {
+    display: flex; /* Display cards in a row */
+    justify-content: space-between; /* Space cards evenly horizontally */
+    align-items: center; /* Center the cards vertically */
+    flex-wrap: wrap; /* Allow cards to wrap to the next line if needed */
+}
+
+/* Style the card */
+.card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    width: 200px; /* Adjust the width as needed */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    transition: transform 0.2s; /* Add a smooth hover effect */
+}
+
+/* Style the card title */
+.card-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+/* Style the card information */
+.card-info {
+    margin: 5px 0;
+    color: #555; /* Dark gray color for information text */
+}
+
+/* Style the card price */
+.card-price {
+    font-weight: bold;
+    color: #007bff; /* Blue color for price */
+}
+
+/* Add hover effect on card */
+.card:hover {
+    transform: scale(1.05); /* Scale up the card slightly on hover */
+}
