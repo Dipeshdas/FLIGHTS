@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booked My Trip</title>
+    <style>
+        body,
+        h1,
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            font-family: Arial, sans-serif;
+            background-image: url('https://wallpapers.com/images/hd/sunset-silhouette-airplane-brh2gmlmjhnj74dv.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            /* or "contain" depending on your preference */
+            background-attachment: fixed;
+        }
+
+
+
+        /* Navbar */
+
+        .navbar {
+            position: fixed;
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 0;
+            background: linear-gradient(to right, #436791, #170b40);
+        }
+
+        .nav-list a {
+            text-decoration: none;
+            font-size: 25px;
+            color: white;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .nav-list a:hover {
+            background: linear-gradient(to right, #959717, #3498db);
+            color: #fff;
+        }
+
+        .nav-list a:focus {
+            outline: none;
+            background: linear-gradient(to right, #130706, #3498db);
+            color: #fff;
+        }
+
+
+        .navbar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .navbar li {
+            margin: 0 20px;
+        }
+
+        .logo {
+            width: 10%;
+            margin-right: 10px;
+            justify-content: center;
+
+        }
+
+        .logo img {
+            width: 30%;
+            display: flex;
+            border-radius: 50%;
+
+        }
+
+        button[type="sign"] {
+
+            width: 50%;
+            max-width: 60px;
+            /* Adjust as needed */
+            margin-left: 100px;
+            background-color: rgb(156, 156, 101);
+            border: black;
+            color: #000;
+        }
+
+        /* Navbar */
+
+
+        /* Center the card container */
+        .card-container {
+            display: flex;
+            flex-direction: column;
+            /* Arrange cards vertically */
+            align-items: center;
+            /* Center cards horizontally */
+            min-height: 100vh;
+
+        }
+
+        /* Style the card */
+        .card {
+            margin-top: 60px;
+            border: 1px solid #ddd;
+            border-radius: 85px;
+            padding: 20px;
+
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(to bottom, #62e4cc, #ffffff);
+            /* Blue to white gradient */
+            width: 600px;
+            /* Adjusted width */
+            text-align: center;
+            color: #ffffff;
+            /* Text color is white */
+        }
+
+        /* Style the card title */
+        .card-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            /* Add spacing between cards */
+        }
+
+        /* Style the card information */
+        .card-info {
+            display: inline-block;
+            /* Display as blocks for spacing */
+            margin-right: 10px;
+            /* Add spacing between paragraphs */
+            font-size: large;
+            margin-bottom: 10px;
+            /* Add spacing between info sections */
+        }
+
+        /* Style the price */
+        .card-price {
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        /* Add hover effect on card */
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card-logo {
+            width: 50px;
+            /* Adjust the logo width as needed */
+            height: 50px;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+
+        /* Style the information label */
+        .info-label {
+            font-size: large;
+            color: #333333;
+            /* Label color */
+        }
+
+        /* Style the information output */
+        .info-output {
+            font-size: large;
+            font-weight: bold;
+            color: #555555;
+            /* Output color */
+        }
+
+        /* Add spacing between information sections */
+        .info-section {
+            margin-bottom: 20px;
+        }
+
+        #button {
+            height: 30px;
+            border-radius: 5px;
+            background-color: rgb(252, 171, 100);
+            color: #333333;
+        }
+
+        #button:hover {
+            cursor: pointer;
+            background-color: black;
+            color: rgb(252, 171, 100);
+            ;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <ul class="nav-list">
+            <div class="logo"><img
+                    src="https://www.webdesignerdepot.com/assets/posts/featured/_1200x630_crop_center-center_82_none/air-india-new-logo_2023-08-11-012303_dajs.jpg?mtime=1691717002"
+                    alt="logo" /></div>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Flights</a></li>
+            <li><a href="#">Hotels</a></li>
+            <li><a href="#">Deals</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Register</a></li>
+            <button type="sign">Sign in</button>
+        </ul>
+    </nav>
+    <div class="card-container">
+
+        <% trips.forEach(function(trip) { %>
+            <div class="card">
+                <h2 class="card-title">
+                    <%= trip.planename %>
+                </h2>
+                <div class="info-section">
+                    <div class="card-info">
+                        <!-- <div class="info-label">Source:</div> -->
+                        <div class="info-output">
+                            <%= trip.source %>
+                        </div>
+                        <div class="info-output">
+                            <%= trip.starttime %>
+                        </div>
+                    </div>
+                    <img src="https://cdn-icons-png.flaticon.com/512/3125/3125713.png" alt="Logo" class="card-logo">
+                    <div class="card-info">
+                        <!-- <div class="info-label">Destination:</div> -->
+                        <div class="info-output">
+                            <%= trip.destination %>
+                        </div>
+                        <div class="info-output">
+                            <%= trip.endtime %>
+                        </div>
+                    </div>
+                </div>
+                <div class="info-section">
+                    <div class="card-info">
+                        <div class="info-label">Departure Date</div>
+                        <div class="info-output">
+                            <%= trip.departureDate %>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <div class="info-label">Flight Class</div>
+                        <div class="info-output">
+                            <%= trip.flightClass %>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="card-price">Price: &#8377;<%= trip.price %>
+                </p>
+                <br>
+                <input id="button" type="submit" value="Book Now">
+            </div>
+            <% }); %>
+    </div>
+</body>
+
+</html>

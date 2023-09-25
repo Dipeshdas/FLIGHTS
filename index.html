@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/style.css">
+
+    <title>Booked My Trip</title>
+</head>
+
+<body>
+
+
+    <nav class="navbar">
+        <ul class="nav-list">
+            <div class="logo"><img src="airindia.jpg" alt="logo" /></div>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Flights</a></li>
+            <li><a href="#">Hotels</a></li>
+            <li><a href="#">Deals</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Register</a></li>
+            <button type="sign">Sign in</button>
+        </ul>
+    </nav>
+
+    <div class="selection-box">
+        <div class="selection-item">
+            <img src="ff.png" alt="Flight">
+            <h3>Flights</h3>
+        </div>
+        <div class="selection-item">
+            <img src="hotel1.png" alt="Hotel">
+            <h3>Hotels</h3>
+        </div>
+        <div class="selection-item">
+            <img src="bus.jpg" alt="Bus">
+            <h3>Bus</h3>
+        </div>
+        <div class="selection-item">
+            <img src="train-icon.png" alt="Train">
+            <h3>Train</h3>
+        </div>
+    </div>
+
+
+    <div class="search-box">
+        <h2>Search for Flights</h2>
+
+        <div class="radio-buttons">
+            <div class="radio-group" id="tog">
+                <input type="radio" id="one-way" name="trip-type" value="One Way">
+                <label for="one-way">One Way</label>
+            </div>
+            <div class="radio-group">
+                <input type="radio" id="round-trip" name="trip-type" value="Round Trip">
+                <label for="round-trip">Round Trip</label>
+            </div>
+            <div class="radio-group">
+                <input type="radio" id="multi-city" name="trip-type" value="Multi City">
+                <label for="multi-city">Multi City</label>
+            </div>
+        </div>
+
+
+        <form id="flight-search-form" action="/api/trips" method="get">
+            <div class="form-group">
+                <label for="source">Source</label>
+                <select class="source" name="source">
+                    <option selected>Choose...</option>
+                    <option value="New York"> <img src="flight-logo.png" alt="">New York</option>
+                    <option value="Los Angeles">Los Angeles</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Kolkata">Kolkata</option>
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="Bangalore">Bangalore</option>
+                    <option value="London">London</option>
+                    <option value="Paris">Paris</option>
+                    <option value="Tokyo">Tokyo</option>
+                    <!-- Add more options as needed -->
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="destination">Destination</label>
+                <select id="destination" name="destination">
+                    <option selected>Choose...</option>
+                    <option value="London">London</option>
+                    <option value="Paris">Paris</option>
+                    <option value="Tokyo">Tokyo</option>
+                    <option value="New York">New York</option>
+                    <option value="Los Angeles">Los Angeles</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Kolkata">Kolkata</option>
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="Bangalore">Bangalore</option>
+                    <!-- Add more options as needed -->
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="departure-date">Departure Date</label>
+                <input type="date" id="departure-date" name="departure-date">
+            </div>
+            <div class="form-group">
+                <label for="return-date">Return Date</label>
+                <input type="date" id="return-date" name="return-date">
+            </div>
+            <div class="form-group">
+                <label for="flight-class">Flight Class</label>
+                <select id="flight-class" name="flight-class">
+                    <option value="Economy">Economy</option>
+                    <option value="Business">Business</option>
+                    <option value="First Class">First Class</option>
+                    <!-- Add more options as needed -->
+                </select>
+            </div>
+
+            <label id="fare" for="destination">Select A Fare Type:</label>
+            <div class="radio-buttons">
+                <div class="radio-group">
+                    <input type="radio" id="one-way" name="trip-type2" value="One Way">
+                    <label for="one-way">Regular Fares</label>
+                </div>
+                <div class="radio-group">
+                    <input type="radio" id="round-trip" name="trip-type2" value="Round Trip">
+                    <label for="round-trip">Armed Forces Fares</label>
+                </div>
+                <div class="radio-group">
+                    <input type="radio" id="multi-city" name="trip-type2" value="Multi City">
+                    <label for="multi-city">Student Fares</label>
+                </div>
+                <div class="radio-group">
+                    <input type="radio" id="multi-city" name="trip-type2" value="Multi City">
+                    <label for="multi-city">Senior Citizen Fares</label>
+                </div>
+                <div class="radio-group">
+                    <input type="radio" id="multi-city" name="trip-type2" value="Multi City">
+                    <label for="multi-city">Doctors & Nurses Fares</label>
+                </div>
+            </div>
+            <button id="myButton" type="submit">Search</button>
+        </form>
+    </div>
+    <!-- <div id="search-results"></div> -->
+    <script src="script.js"></script>
+</body>
+
+</html>
